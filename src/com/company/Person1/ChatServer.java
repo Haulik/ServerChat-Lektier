@@ -18,7 +18,7 @@ public class ChatServer {
         try {
             ServerSocket serverSocket = new ServerSocket(1337);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient");
+            System.out.println("Forbundet til Klient ");
 
             //send til klient
             //lyt til server

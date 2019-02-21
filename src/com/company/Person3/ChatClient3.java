@@ -19,7 +19,7 @@ public class ChatClient3 {
 
         try {
             Socket socket = new Socket("localhost", 1337);
-            System.out.println("Er forbundet til server");
+            System.out.println("Er forbundet til server ");
 
             //lyt til server
 //            Thread thread = new Thread(new ChatServer3());
