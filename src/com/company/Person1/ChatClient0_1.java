@@ -13,7 +13,7 @@ public class ChatClient0_1 implements Runnable {
 
 
         try {
-            Socket socket = new Socket("localhost", 1010);
+            Socket socket = new Socket("localhost", 1014);
             System.out.println("Er forbundet til server");
 
             // Send til server:
