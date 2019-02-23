@@ -5,22 +5,33 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ChatServer3 implements Runnable {
 
-    @Override
-    public void run() {
+public class ChatServer3 {
 
+
+
+    public static void main(String[] args) {
+        new ChatServer3().runServer();
+
+    }
+
+    public void runServer(){
         try {
-            ServerSocket serverSocket = new ServerSocket(1018);
+            ServerSocket serverSocket = new ServerSocket(2080);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient");
+            System.out.println("Forbundet til Klient ");
 
+            Thread thread = new Thread(new ChatServer4());
+            thread.start();
+
+
+            //send til klient
+            //lyt til server
 
             //lyt til klient;
-            try (Scanner scanner = new Scanner(socket.getInputStream())) {
-                while (true) {
+            try (Scanner scanner = new Scanner(socket.getInputStream())){
+                while (true){
                     System.out.println(scanner.nextLine()); // blokerer
-
 
                 }
             } catch (Exception e) {

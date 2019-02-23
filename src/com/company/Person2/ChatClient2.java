@@ -17,7 +17,10 @@ public class ChatClient2 {
 
         try {
             Socket socket = new Socket("localhost", 1337);
-            System.out.println("Er forbundet til server");
+            System.out.println("Er forbundet til server1");
+
+            Socket socket2 = new Socket("localhost", 2080);
+            System.out.println("Er forbundet til server3");
 
             //lyt til server
             Thread thread = new Thread(new ChatServer2());
@@ -27,9 +30,12 @@ public class ChatClient2 {
             Scanner scanner = new Scanner(System.in);
 
             DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
+            DataOutputStream dOut2 = new DataOutputStream(socket2.getOutputStream());
 
             while (true) {
-                dOut.writeBytes(scanner.nextLine() + "\n");
+                String Line = scanner.nextLine();
+                dOut.writeBytes( Line + "\n");
+                dOut2.writeBytes(Line + "\n");
                 dOut.flush();
             }
 

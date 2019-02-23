@@ -1,6 +1,5 @@
 package com.company.Person3;
 
-import com.company.Person2.ChatServer2;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -8,30 +7,30 @@ import java.net.Socket;
 import java.util.Scanner;
 
 
-public class ChatClient3 {
+public class ChatClient3 implements Runnable {
 
 
-    public static void main(String[] args) {
-        new ChatClient3().runClient();
-    }
+    @Override
+    public void run() {
 
-    public void runClient() {
 
         try {
-            Socket socket = new Socket("localhost", 1337);
-            System.out.println("Er forbundet til server ");
+            Socket socket = new Socket("localhost", 1040);
+            System.out.println("Er forbundet til server 1_1");
 
-            //lyt til server
-//            Thread thread = new Thread(new ChatServer3());
-//            thread.start();
+            Socket socket2 = new Socket("localhost", 3050);
+            System.out.println("Er forbundet til server 2_1");
 
             // Send til server:
             Scanner scanner = new Scanner(System.in);
 
             DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
+            DataOutputStream dOut2 = new DataOutputStream(socket2.getOutputStream());
 
             while (true) {
-                dOut.writeBytes(scanner.nextLine() + "\n");
+                String line = scanner.nextLine();
+                dOut.writeBytes(line + "\n");
+                dOut2.writeBytes(line + "\n");
                 dOut.flush();
             }
 
@@ -39,6 +38,7 @@ public class ChatClient3 {
             e.printStackTrace();
         }
     }
-
-
 }
+
+
+

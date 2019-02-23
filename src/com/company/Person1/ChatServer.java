@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class ChatServer {
 
 
+
     public static void main(String[] args) {
         new ChatServer().runServer();
 
@@ -20,6 +21,7 @@ public class ChatServer {
             Socket socket = serverSocket.accept(); // blokerer
             System.out.println("Forbundet til Klient ");
 
+
             //send til klient
             //lyt til server
             Thread thread = new Thread(new ChatClient());
@@ -29,7 +31,6 @@ public class ChatServer {
             try (Scanner scanner = new Scanner(socket.getInputStream())){
                 while (true){
                     System.out.println(scanner.nextLine()); // blokerer
-
 
                 }
             } catch (Exception e) {
