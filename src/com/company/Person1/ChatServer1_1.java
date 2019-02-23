@@ -13,7 +13,10 @@ public class ChatServer1_1 implements Runnable {
         try {
             ServerSocket serverSocket = new ServerSocket(1040);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient");
+            System.out.println("Forbundet til Klient 3");
+
+            Thread thread = new Thread(new ChatClient());
+            thread.start();
 
 
             //lyt til klient;

@@ -19,12 +19,12 @@ public class ChatServer {
         try {
             ServerSocket serverSocket = new ServerSocket(1337);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient ");
+            System.out.println("Forbundet til Klient 2");
 
 
             //send til klient
             //lyt til server
-            Thread thread = new Thread(new ChatClient());
+            Thread thread = new Thread(new ChatServer1_1());
             thread.start();
 
             //lyt til klient;

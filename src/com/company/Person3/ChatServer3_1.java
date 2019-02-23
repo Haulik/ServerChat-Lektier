@@ -7,19 +7,17 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ChatServer4 implements Runnable {
+
+
+public class ChatServer3_1 implements Runnable {
 
     @Override
     public void run() {
 
         try {
-            ServerSocket serverSocket = new ServerSocket(1018);
+            ServerSocket serverSocket = new ServerSocket(1028);
             Socket socket = serverSocket.accept(); // blokerer
             System.out.println("Forbundet til Klient");
-
-
-            Thread thread = new Thread(new ChatClient3());
-            thread.start();
 
             //lyt til klient;
             try (Scanner scanner = new Scanner(socket.getInputStream())) {

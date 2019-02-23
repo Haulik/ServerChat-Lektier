@@ -1,5 +1,6 @@
 package com.company.Person2;
 
+import com.company.Person2.ChatClient2;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,7 +14,7 @@ public class ChatServer2_1 implements Runnable {
         try {
             ServerSocket serverSocket = new ServerSocket(3050);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient");
+            System.out.println("Forbundet til Klient 1");
 
 
             //lyt til klient;
