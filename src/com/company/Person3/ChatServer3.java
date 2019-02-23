@@ -17,7 +17,7 @@ public class ChatServer3 implements Runnable {
         try {
             ServerSocket serverSocket = new ServerSocket(1018);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient");
+            System.out.println("Forbundet til Klient 1");
 
 
             Thread thread = new Thread(new ChatServer3_1());

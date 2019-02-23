@@ -17,7 +17,7 @@ public class ChatServer3_1 implements Runnable {
         try {
             ServerSocket serverSocket = new ServerSocket(1028);
             Socket socket = serverSocket.accept(); // blokerer
-            System.out.println("Forbundet til Klient");
+            System.out.println("Forbundet til Klient 2");
 
             //lyt til klient;
             try (Scanner scanner = new Scanner(socket.getInputStream())) {
